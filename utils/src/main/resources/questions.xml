@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE questions-configuration SYSTEM "questions.dtd">
+<!--
+	*************************************************************************
+	*	O XML que contém todo o questionário a serem utilizados nos jogos	*
+	*	para verificar o nível de conhecimento do jogador.					*
+	*************************************************************************
+-->
+<questions>
+	<theme name="Conceitos Gerais">
+		<question id="1">
+			<description>
+				Modelo de Dados que é a representação gráfica dos principais dados da Organização com elevado grau de abstração
+			</description>
+			<level>medium</level>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Conceitual</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+			<tip id="1">
+				<description>Tem a ver com Conceito.</description>
+			</tip>
+		</question>
+		<question id="2">
+			<description>
+				Modelo de Dados Conceitual que representa os dados de apenas uma Área de Negócios (ou de um departamento)
+			</description>
+			<level>medium</level>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Conceitual Corporativo</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Conceitual Departamental</value>
+			</answer>
+		</question>
+		<question id="3">
+			<description>
+				Modelo de Dados Conceitual que representa os dados de toda uma Organização ou de duas ou mais Áreas de Negócios (ou departamentos)
+			</description>
+			<level>medium</level>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Conceitual Corporativo</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Conceitual Departamental</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+		</question>
+		<question id="4">
+			<description>
+				Modelo de Dados que promove uma descrição dos componentes do Modelo de Dados Conceitual, utilizando-se o Dicionário de Dados, que é uma ferramenta muito útil nestes casos
+			</description>
+			<level>easy</level>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Conceitual Departamental</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Conceitual Corporativo</value>
+			</answer>
+		</question>
+		<question id="5">
+			<description>
+				Modelo de Dados que é a implementação do Modelo de Dados Lógico no Computador
+			</description>
+			<level>easy</level>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Conceitual Corporativo</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Conceitual Departamental</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+		</question>
+		<question id="6">
+			<description>
+				Outro nome do Modelo de Dados Conceitual
+			</description>
+			<level>easy</level>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Lógico</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Modelo de Dados Físico</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Modelo de Negócios</value>
+			</answer>
+		</question>
+		<question id="7">
+			<description>
+				A sua identificação deve ser composta por um substantivo singular que identifique o seu conteúdo, mais um qualificativo, se necessário. Devem ser utilizadas letras maiúsculas
+			</description>
+			<level>easy</level>
+			<answer isCorrect="true">
+				<value>Entidade</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Relacionamento</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Atributo</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Chave</value>
+			</answer>
+		</question>
+		<question id="8">
+			<description>
+				A sua identificação deve ser feita através de um verbo, na 3ª pessoa do singular, que identifique a ação que uma entidade exerce ou sofre em relação uma outra entidade. Devem ser utilizadas letras minúsculas
+			</description>
+			<level>medium</level>
+			<answer isCorrect="false">
+				<value>Chave</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Atributo</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Entidade</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Relacionamento</value>
+			</answer>
+		</question>
+		<question id="9">
+			<description>
+				A sua identificação deve ser composta por um substantivo singular e, se for necessário, mais um qualificativo que o caracterize. Devem ser utilizadas letras maiúsculas
+			</description>
+			<level>medium</level>
+			<answer isCorrect="false">
+				<value>Relacionamento</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Atributo</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Chave</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Entidade</value>
+			</answer>
+		</question>
+		<question id="10">
+			<description>
+				Abordagem que se resume à criação de aplicações independentes, desde os arquivos de dados ás saídas
+			</description>
+			<level>hard</level>
+			<answer isCorrect="false">
+				<value>Abordagem de Banco de Dados</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Abordagem de sistemas Integrados</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Abordagem Convencional</value>
+			</answer>
+		</question>
+		<question id="11">
+			<description>
+				Abordagem que consiste, basicamente, na incorporação dos dados de uma mesma área de aplicação (ou área de negócio) em um mesmo conjunto de arquivos
+			</description>
+			<level>hard</level>
+			<answer isCorrect="true">
+				<value>Abordagem de sistemas Integrados</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Abordagem Convencional</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Abordagem de Banco de Dados</value>
+			</answer>
+		</question>
+		<question id="12">
+			<description>
+				Abordagem que consiste, fundamentalmente, em uma coleção de dados de interesse de uma Organização, dispostos de uma forma organizada e com inter-relações bem definidas, capaz de atender ás necessidades e exigências de informação de todas as aplicações, eliminando as suas dependências em relação à representação física dos dados
+			</description>
+			<level>hard</level>
+			<answer isCorrect="false">
+				<value>Abordagem Convencional</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Abordagem de Banco de Dados</value>
+			</answer>
+			<answer isCorrect="false">
+				<value>Abordagem de Sistemas Integrados</value>
+			</answer>
+		</question>
+		<question id="13">
+			<description>
+				Valor do campo quando é armazenado no Banco de Dados
+			</description>
+			<level>easy</level>
+			<answer isCorrect="false">
+				<value>Informação</value>
+			</answer>
+			<answer isCorrect="true">
+				<value>Dado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Banco de Dados</value>
+			</answer>
+		</question>
+		<question id="14">
+			<description >Valor que este campo representa para as atividades da empresa</description>
+			<level >easy</level>
+			<answer isCorrect="false">
+				<value >Dado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Banco de Dados</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Informação</value>
+			</answer>
+		</question>
+		<question id="15">
+			<description >Arquivo físico, em dispositivos periféricos, onde estão armazenados os dados de diversos sistemas, para consulta e atualização pelo usuário</description><level >easy</level>
+			<answer isCorrect="true">
+				<value >Banco de Dados</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Informação</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Dado</value>
+			</answer>
+		</question>
+		<question id="16">
+			<description >Visão onde existe a preocupação com a forma de recuperação e manipulação dos dados dentro do Banco de Dados</description>
+			<level >hard</level>
+			<answer isCorrect="false">
+				<value>Visão Conceitual</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Visão Interna</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Visão Externa</value>
+			</answer>
+		</question>
+		<question id="17">
+			<description >Visão onde existe a preocupação na definição de normas e procedimentos para manipulação dos dados, para garantir a sua segurança e confiabilidade, o desenvolvimento de sistemas e programas aplicativos e a definição no banco de dados de novos arquivos e campos</description>
+			<level >hard</level>
+			<answer isCorrect="false">
+				<value >Visão Externa</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Visão Interna</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Visão Conceitual</value>
+			</answer>
+		</question>
+		<question id="18">
+			<description >Linguagem de operação que define as aplicações, arquivos e campos que irão compor o banco de dados (comandos de criação e atualização da estrutura dos campos dos arquivos)</description>
+			<level >easy</level>
+			<answer isCorrect="false">
+				<value >Linguagem de manipulação de dados (DML)</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Linguagem de definição de dados (DDL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de Controle de Dados (DCL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de Consulta de dados (DQL)</value>
+			</answer>
+		</question>
+		<question id="19">
+			<description >Linguagem que define os comandos de manipulação e operação dos dados (comandos de consulta e atualização dos dados dos arquivos)</description><level >easy</level><answer isCorrect="true">
+	<value >Linguagem de manipulação de dados (DML)</value>
+</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de definição de dados (DDL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de Consulta de dados (DQL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de Controle de Dados (DCL)</value>
+			</answer>
+		</question>
+		<question id="20">
+			<description >Linguagem que controla os aspectos de autorização de dados e licenças de usuários para controlar quem tem acesso para ver ou manipular dados dentro do banco de dados</description>
+			<level >easy</level><answer isCorrect="false">
+	<value >Linguagem de Consulta de dados (DQL)</value>
+</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de definição de dados (DDL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de manipulação de dados (DML)</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Linguagem de Controle de Dados (DCL)</value>
+			</answer>
+		</question>
+		<question id="21">
+			<description >	Linguagem que tem apenas um comando, mas é a parte do SQL mais utilizada. Composta pelo comando SELECT</description><level >easy</level><answer isCorrect="false">
+	<value >Linguagem de definição de dados (DDL)</value>
+</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de Controle de Dados (DCL)</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Linguagem de Consulta de dados (DQL)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem de manipulação de dados (DML)</value>
+			</answer>
+		</question>
+		<question id="22">
+			<description >	Visão onde o usuário opera os sistemas aplicativos, através de interfaces desenvolvidas pelo analista (programas), buscando o atendimento de suas necessidades</description><level >hard</level><answer isCorrect="true">
+	<value >Visão Externa</value>
+</answer>
+			<answer isCorrect="false">
+				<value >Visão Conceitual</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Visão Interna</value>
+			</answer>
+		</question>
+		<question id="23">
+			<description >Tipo de organização em que os registros estão armazenados lado a lado</description>
+			<level >easy</level>
+			<answer isCorrect="true">
+				<value >Seqüencial</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial Indexado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Indexado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Relativa Direta</value>
+			</answer>
+		</question>
+		<question id="24">
+			<description >Tipo de organização em que os registros são identificados por um índice, chamado de chave do acesso ou chave do registro ou chave principal, que representa o valor com que as demais informações são identificadas no arquivo</description>
+			<level >medium</level>
+			<answer isCorrect="false">
+				<value >Relativa Direta</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Indexado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial Indexado</value>
+			</answer>
+		</question>
+		<question id="25">
+			<description >Tipo de organização em que, semelhante à organização indexada, os registros são identificados por um índice, chamado de chave do acesso ou chave do registro ou chave principal, que representa o valor com que as demais informações do registro serão identificados no arquivo</description>
+			<level >medium</level>
+			<answer isCorrect="false">
+				<value >Indexado</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Seqüencial Indexado </value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Relativa Direta</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial</value>
+			</answer>
+		</question>
+		<question id="26">
+			<description >Tipo de organização que contém, apenas, uma área de dados para armazenamento dos registros. Estes registros são identificados por uma chave principal, cujo endereço físico para armazenamento é dado através do valor desta chave ou de um valor calculado a partir dela</description>
+			<level >medium</level>
+			<answer isCorrect="false">
+				<value >Seqüencial Indexado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Indexado</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Relativa Direta</value>
+			</answer>
+		</question>
+		<question id="27">
+			<description >Tipo de organização que permite o acesso direto aos registros de dados através de chaves secundária (chave que não é primária), de um arquivo de dados</description>
+			<level >hard</level>
+			<answer isCorrect="false">
+				<value >Indexado</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Invertido</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial Indexado</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Seqüencial</value>
+			</answer>
+		</question>
+		<question id="28">
+			<description >Linguagem em que o usuário instrui o sistema a executar uma seqüência de operações para atingir um resultado desejado</description>
+			<level >medium</level>
+			<answer isCorrect="true">
+				<value >Linguagem Procedural</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem Interpretada</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem Não-Procedural (Descritiva)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem Compilada</value>
+			</answer>
+		</question>
+		<question id="29">
+			<description >Linguagem em que o usuário descreve a informação desejada, sem fornecer um procedimento específico para obtê-la</description>
+			<level >medium</level>
+			<answer isCorrect="false">
+				<value >Linguagem Interpretada</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem Compilada</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >Linguagem Não-Procedural (Descritiva)</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >Linguagem Procedural</value>
+			</answer>
+		</question>
+	</theme>
+	<theme name="Normalização">
+		<question id="1">
+			<description >Forma normal que se encontra a estrutura de dados se todas as colunas ocorrerem uma única vez, não existindo grupo repetitivo de dados</description>
+			<level >easy</level>
+			<answer isCorrect="true">
+				<value >1ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >2ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >3ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >4ª Forma Normal</value>
+			</answer>
+		</question>
+		<question id="2">
+			<description >Forma normal que se encontra a estrutura de dados se todas as colunas que não são chave primária não apresentarem a anomalia da dependência funcional parcial em relação a chave primária</description>
+			<level >easy</level>
+			<answer isCorrect="false">
+				<value >1ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >2ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >3ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >4ª Forma Normal</value>
+			</answer>
+		</question>
+		<question id="3">
+			<description >Formal normal que se encontra a estrutura de dados se não existir a anomalia da dependência transitiva ou indireta entre um atributo (coluna) e a chave primária</description>
+			<level >easy</level>
+			<answer isCorrect="false">
+				<value >1ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >2ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >3ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >4ª Forma Normal</value>
+			</answer>
+		</question>
+		<question id="4">
+			<description >Forma normal que se encontra a estrutura de dados se não apresentar subconjuntos da chave candidata</description>
+			<level >hard</level>
+			<answer isCorrect="false">
+				<value >1ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >2ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="false">
+				<value >3ª Forma Normal</value>
+			</answer>
+			<answer isCorrect="true">
+				<value >3ª Forma Normal Boyce - Codde</value>
+			</answer>
+		</question>
+		<question id="5"></question>
+		<question id="6"></question>
+		<question id="7"></question>
+		<question id="8"></question>
+		<question id="9"></question>
+	</theme>
+	<theme name="Chaves e Relacionamento">
+		<question id="">
+			<description />
+			<level />
+			<answer isCorrect="">
+				<value />
+			</answer>
+			<tip id="">
+				<description />
+			</tip>
+		</question>
+	</theme>
+	<theme name="Teoria Relacional">
+		<question id="">
+			<description />
+			<level />
+			<answer isCorrect="">
+				<value />
+			</answer>
+			<tip id="">
+				<description />
+			</tip>
+		</question>
+	</theme>
+	<theme name="Requisitos de Banco de Dados">
+		<question id=""></question>
+	</theme>
+</questions>

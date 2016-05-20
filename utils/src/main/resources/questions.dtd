@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- questions é o elemento raiz. -->
+<!ELEMENT questions (theme)*>
+
+<!-- Elemento theme: serve para separar o question�rio em temas. -->
+<!ELEMENT theme (question)*>
+<!ATTLIST theme
+		name CDATA #REQUIRED>
+	
+<!-- Elemento question. -->
+<!ELEMENT question (description|level|answer|tip)*>
+<!ATTLIST question
+		id CDATA #REQUIRED>
+		
+<!-- Elemento answer. -->
+<!ELEMENT answer (value)*>
+<!ATTLIST answer
+		isCorrect CDATA #REQUIRED>
+		
+<!-- Elemento tip. -->
+<!ELEMENT tip (description)*>
+<!ATTLIST tip
+		id CDATA #REQUIRED>

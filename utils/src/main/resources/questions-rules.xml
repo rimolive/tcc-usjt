@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<digester-rules>
+	<object-create-rule pattern="questions" classname="br.usjt.tcc.utils.xml.Questions" />
+		<set-properties-rule pattern="questions" >
+			<alias attr-name="library" prop-name="library" />
+		</set-properties-rule>
+		<pattern value="questions/theme">
+			<object-create-rule classname="br.usjt.tcc.utils.xml.Theme" />
+			<set-properties-rule>
+				<alias attr-name="name" prop-name="name" />
+			</set-properties-rule>  
+			<pattern value="question">
+				<object-create-rule classname="br.usjt.tcc.utils.xml.Question" />
+				<set-properties-rule>
+					<alias attr-name="id" prop-name="id" />
+				</set-properties-rule>
+				<call-method-rule pattern="description" methodname="setDescription" paramcount="0" />
+				<call-method-rule pattern="level" methodname="setLevel" paramcount="0" />
+				<pattern value="answer">
+					<object-create-rule classname="br.usjt.tcc.utils.xml.Answer" />
+					<set-properties-rule>
+						<alias attr-name="isCorrect" prop-name="correct" />
+					</set-properties-rule>
+					<call-method-rule pattern="value" methodname="setValue" paramcount="0" />
+					<set-next-rule methodname="addAnswer" />
+				</pattern>
+				<pattern value="tip">
+					<object-create-rule classname="br.usjt.tcc.utils.xml.Tip" />
+					<set-properties-rule>
+						<alias attr-name="id" prop-name="id" />
+					</set-properties-rule>
+					<call-method-rule pattern="description" methodname="setDescription" paramcount="0" />
+					<set-next-rule methodname="addTip" />
+				</pattern>
+      			<set-next-rule methodname="addQuestion" />
+			</pattern>
+		<set-next-rule methodname="addTheme" />
+	</pattern>
+</digester-rules>

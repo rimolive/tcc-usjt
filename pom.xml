@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.usjt.tcc</groupId>
+	<artifactId>tcc-usjt</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Trabalho de Conclusao de Curso entregue na USJT</name>
+	
+	<developers>
+		<developer>
+			<name>Diego Bolzan da Silva</name>
+			<email></email>
+		</developer>
+		<developer>
+			<name>Henrique Silva Conceicao</name>
+			<email></email>
+		</developer>
+		<developer>
+			<name>Jayson Jun Silva Sumi</name>
+			<email></email>
+		</developer>
+		<developer>
+			<name>Leandro Capinan Scheiner</name>
+			<email></email>
+		</developer>
+		<developer>
+			<name>Ricardo Martinelli de Oliveira</name>
+			<email>ricardo.martinelli.oliveira@gmail.com</email>
+		</developer>
+	</developers>
+	
+	<properties>
+		<lwjgl.version>2.9.3</lwjgl.version>
+		<commons.digester.version>3.2</commons.digester.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.lwjgl.lwjgl</groupId>
+			<artifactId>lwjgl</artifactId>
+			<version>${lwjgl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-digester3</artifactId>
+			<version>${commons.digester.version}</version>
+		</dependency>
+	</dependencies>
+	<packaging>pom</packaging>
+	<modules>
+		<module>domino-bd</module>
+		<module>utils</module>
+		<module>jogo-futisco</module>
+	</modules>
+</project>
