@@ -12,7 +12,7 @@ package br.usjt.tcc.utils;
  */
 public interface GameWindowCallback {
 	/**
-	 * Notificacao que o jogo deve inicializar quaisquer recursos necess�rios
+	 * Notificacao que o jogo deve inicializar quaisquer recursos necessarios
 	 * para utilizacao. Essa operacao inclui carregar os sprites.
 	 */
 	public void initialise();

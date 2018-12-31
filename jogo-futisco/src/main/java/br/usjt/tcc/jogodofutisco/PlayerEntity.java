@@ -4,11 +4,11 @@ import br.usjt.tcc.utils.Entity;
 import br.usjt.tcc.utils.ResourceFactory;
 
 /**
- * Entidade que representa o jogador. Nela encontra-se a lógica de IA do
+ * Entidade que representa o jogador. Nela encontra-se a logica de IA do
  * jogador, mas somente se o jogador for controlado pelo computador
  * 
  * @author Diego Bolzan da Silva
- * @author Henrique Silva Conceição
+ * @author Henrique Silva Conceicao
  * @author Jayson Jun Silva Sumi
  * @author Leandro Capinan Scheiner
  * @author Ricardo Martinelli de Oliveira
@@ -17,7 +17,7 @@ public class PlayerEntity extends Entity {
 	/** O jogo no qual existe o jogador */
 	@SuppressWarnings("unused")
 	private Jogo game;
-	/** Indicador de que a entidade está sendo controlada pelo jogador */
+	/** Indicador de que a entidade esta sendo controlada pelo jogador */
 	@SuppressWarnings("unused")
 	private int player;
 	/** */
@@ -26,10 +26,10 @@ public class PlayerEntity extends Entity {
 	/**
 	 * Cria uma nova Entity para representar o jogador.
 	 * 
-	 * @param game O jogo na qual a peça será criada
-	 * @param ref A referência para o sprite que representa a Entidade
-	 * @param x A posição inicial em x da peça
-	 * @param y A posição inicial em y da peça
+	 * @param game O jogo na qual a peca sera criada
+	 * @param ref A referencia para o sprite que representa a Entidade
+	 * @param x A posicao inicial em x da peca
+	 * @param y A posicao inicial em y da peca
 	 */
 	@SuppressWarnings("unused")
 	private PlayerEntity(Jogo game, String ref, int x, int y) {
@@ -41,8 +41,8 @@ public class PlayerEntity extends Entity {
 	/**
 	 * Cria uma nova Entidade para representar o jogador.
 	 * 
-	 * @param game O jogo na qual a peça será criada
-	 * @param order A ordem de visualização na tela
+	 * @param game O jogo na qual a peca sera criada
+	 * @param order A ordem de visualizacao na tela
 	 */
 	public PlayerEntity(Jogo game, int order) {
 		super("sprites/domino/domino_blank.GIF", 0, 0);
@@ -70,16 +70,16 @@ public class PlayerEntity extends Entity {
 	}
 
 	/**
-	 * Implementa a lógica do jogador. Este método é a implementação física da
-	 * lógica de IA do jogador.
+	 * Implementa a logica do jogador. Este metodo e a implementacao fisica da
+	 * logica de IA do jogador.
 	 */
 	public void doLogic() {
-		// TODO Implementar a lógica do jogo
+		// TODO Implementar a lï¿½gica do jogo
 	}
 
 	/**
-	 * Método que redesenha o jogador no tabuleiro de acordo com o número da
-	 * casa e com o número do jogador. 
+	 * Metodo que redesenha o jogador no tabuleiro de acordo com o numero da
+	 * casa e com o numero do jogador. 
 	 *  
 	 * @param coord
 	 * @param space
@@ -114,4 +114,9 @@ public class PlayerEntity extends Entity {
 	public void setSpace(int space) {
 		this.space = space;
 	}
+
+	public void collidedWith(Entity other) {
+		// Do Nothing
+	}
+
 }

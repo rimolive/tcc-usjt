@@ -4,10 +4,10 @@ import java.awt.Rectangle;
 
 /**
  * Uma entidade representa qualquer elemento que aparece no jogo. A entidade e
- * responsavel por resolver as colisoes e movimentacao baseado em um conjunto de
- * propriedades definidas ou pela subclasse ou externamente. O posicionamento da
- * entidade esta expressa em double. Pode ata soar estranho visto que o pixel a
- * expresso em inteiros(integer). Entretanto, ao utilizar o valor expresso em
+ * responsavel por resolver as colisoes e movimentacoes baseado em um conjunto 
+ * de propriedades definidas ou pela subclasse ou externamente. O posicionamento
+ * da entidade esta expressa em double. Pode ate soar estranho visto que o pixel
+ * e expresso em inteiros(integer). Entretanto, ao utilizar o valor expresso em
  * double podemos movimentar uma entidade meio pixel para qualquer direcao, por
  * exemplo, o que podemos tornar a movimentacao do jogo mais precisa.
  * 
@@ -22,7 +22,7 @@ public abstract class Entity {
 	protected double x;
 	/** A posicao atual da entidade no eixo y */
 	protected double y;
-	/** A sprite que representa a entidade */
+	/** O {@ref Sprite} que representa a entidade */
 	protected Sprite sprite;
 	/** A velocidade atual da entidade horizontalmente (pixels/seg) */
 	protected double dx;
@@ -38,7 +38,7 @@ public abstract class Entity {
 	private Rectangle him = new Rectangle();
 
 	/**
-	 * Constroi uma entidade baseada em uma imagem(sprite) e na posiaco.
+	 * Constroi uma entidade baseada em um sprite e na posicao.
 	 * 
 	 * @param ref
 	 *            A referencia da imagem a ser mostrada na entidade
@@ -115,9 +115,7 @@ public abstract class Entity {
 	 * Realiza a logica associada na entidade. Este metodo sera chamado
 	 * periodicamente baseado nos eventos do jogo.
 	 */
-	public void doLogic() {
-
-	}
+	public abstract void doLogic();
 
 	/**
 	 * Retorna a posicao no eixo x da entidade
@@ -159,7 +157,6 @@ public abstract class Entity {
 	 * @param other
 	 *            A entidade na qual esta colidiu-se
 	 */
-	public void collidedWith(Entity other) {
-
-	}
+	public abstract void collidedWith(Entity other);
+	
 }

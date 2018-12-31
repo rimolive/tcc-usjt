@@ -13,7 +13,7 @@ import java.util.List;
  * Classe que mapeia as casas do tabuleiro de acordo com um arquivo .klc.
  * 
  * @author Diego Bolzan da Silva
- * @author Henrique Silva Conceição
+ * @author Henrique Silva Conceicao
  * @author Jayson Jun Silva Sumi
  * @author Leandro Capinan Scheiner
  * @author Ricardo Martinelli de Oliveira
@@ -31,7 +31,7 @@ public class SpaceCoord {
 	private BufferedReader reader;
 
 	/**
-	 * Construtor padrão.
+	 * Construtor padrao.
 	 * 
 	 * @param filetb
 	 */
@@ -71,13 +71,13 @@ public class SpaceCoord {
 	}
 
 	/**
-	 * Retorna a coordenada de acordo com o número da casa e da peça.
+	 * Retorna a coordenada de acordo com o numero da casa e da peca.
 	 * 
 	 * @param space
-	 *            O número da casa
+	 *            O numero da casa
 	 * @param peca
-	 *            O número da peça
-	 * @return A coordenada a ser desenhada a peça
+	 *            O numero da peca
+	 * @return A coordenada a ser desenhada a peca
 	 */
 	public Dimension getCoord(int space, int peca) {
 		switch (peca) {
@@ -97,7 +97,7 @@ public class SpaceCoord {
 	}
 
 	/**
-	 * Retorna o tipo da casa de acordo com o número da casa
+	 * Retorna o tipo da casa de acordo com o numero da casa
 	 * 
 	 * @param i
 	 * @return

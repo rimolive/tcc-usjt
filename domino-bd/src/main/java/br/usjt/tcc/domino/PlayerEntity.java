@@ -155,4 +155,9 @@ public class PlayerEntity extends Entity {
 	public Vector<PieceEntity> getPieces() {
 		return pieces;
 	}
+
+	public void collidedWith(Entity other) {
+		// Do Nothing
+	}
+	
 }

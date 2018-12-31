@@ -73,7 +73,7 @@ public class Java2DSpriteStore {
 			URL url = this.getClass().getClassLoader().getResource(ref);
 
 			if (url == null) {
-				fail("Nao foi possivel encontrar ref: " + ref);
+				fail("Nao foi possivel encontrar sprite: " + ref);
 			}
 
 			// Utiliza a classe ImageIO para ler a imagem

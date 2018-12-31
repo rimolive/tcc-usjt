@@ -6,7 +6,7 @@ import java.awt.Color;
  * A janela na qual o jogo sera mostrado. Esta interface expoe apenas o
  * suficiente para que a logica do jogo possa interagir, enquanto ainda e
  * mantida a abstracao longe de qualquer implementacao fisica de janelamento,
- * ex. AWT, LWJGL.
+ * ex. Java2D, OpenGL.
  * 
  * @author Diego Bolzan da Silva
  * @author Henrique Silva Conceicao

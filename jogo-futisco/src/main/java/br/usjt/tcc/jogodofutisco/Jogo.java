@@ -12,34 +12,34 @@ import br.usjt.tcc.utils.GameWindow;
 import br.usjt.tcc.utils.GameWindowCallback;
 import br.usjt.tcc.utils.ResourceFactory;
 import br.usjt.tcc.utils.SystemTimer;
-import br.usjt.tcc.utils.input.Mouse;
+import br.usjt.tcc.utils.java2d.input.Mouse;
 import br.usjt.tcc.utils.sound.SoundCache;
 import br.usjt.tcc.utils.xml.Question;
 import br.usjt.tcc.utils.xml.QuestionLoader;
 
 /**
- * Classe que representa o jogo do futisco. O objetivo desta classe é
+ * Classe que representa o jogo do futisco. O objetivo desta classe e
  * centralizar todo o fluxo do jogo nesta classe e inicializar as
  * entidades do jogo.
  *  
  * @author Diego Bolzan da Silva
- * @author Henrique Silva Conceição
+ * @author Henrique Silva Conceicao
  * @author Jayson Jun Silva Sumi
  * @author Leandro Capinan Scheiner
  * @author Ricardo Martinelli de Oliveira
  */
 public class Jogo extends Canvas implements GameWindowCallback {
-	/** Resolução do jogo */
+	/** Resolucao do jogo */
 	public final Dimension resolution = new Dimension(1024, 768);
-	/** Número de versão calculado pelo Eclipse */
+	/** Numero de versao calculado pelo Eclipse */
 	private static final long serialVersionUID = 26727163333099623L;
-	/** A janela que será utilizada para renderizar o jogo */
+	/** A janela que serï¿½ utilizada para renderizar o jogo */
 	private GameWindow window;
-	/** O título da janela do jogo */
+	/** O titulo da janela do jogo */
 	private String windowTitle = "Jogo do Futisco";
 	/** O tempo na qual o loop anterior foi executado */
 	private transient long lastLoopTime = SystemTimer.getTime();
-	/** O tempo decorrido desde que houve a última medição do FPS */
+	/** O tempo decorrido desde que houve a ultima medicao do FPS */
 	private long lastFpsTime = 0;
 	/** A taxa de FPS calculada */
 	private int fps;
@@ -63,31 +63,31 @@ public class Jogo extends Canvas implements GameWindowCallback {
 	public SoundCache sound = new SoundCache();
 	
 	/**
-	 * Contrutor da classe que seta o tipo de renderização a ser utilizado.
+	 * Contrutor da classe que seta o tipo de renderizacao a ser utilizado.
 	 * 
 	 * @see br.usjt.tcc.utils.java2d.Java2DGameWindow
 	 * @see br.usjt.tcc.utils.lwjgl.LWJGLGameWindow
 	 * 
-	 * @param renderingType O tipo de renderização
+	 * @param renderingType O tipo de renderizacao
 	 */
 	public Jogo(int renderingType) {
-		// Cria a janela baseada no tipo de renderização
+		// Cria a janela baseada no tipo de renderizacao
 		ResourceFactory.get().setRenderingType(renderingType);
 		window = ResourceFactory.get().getGameWindow();
-		// Seta os atributos básicos da janela do jogo		
+		// Seta os atributos basicos da janela do jogo		
 		window.setResolution(resolution.width, resolution.height);
 		window.setGameWindowCallback(this);
 		window.setTitle(windowTitle);
-		// Inicia a renderização do jogo
+		// Inicia a renderizacao do jogo
 		window.startRendering();
 	}
 	
 	/**
-	 * Inicia um novo jogo. Este método deve limpar as coleções de entidades para
-	 * criar novas coleções.
+	 * Inicia um novo jogo. Este metodo deve limpar as colecoes de entidades para
+	 * criar novas colecoes.
 	 */
 	private void startGame() {
-		// Limpa a coleção de entidades e inicializa uma nova coleção.
+		// Limpa a colecao de entidades e inicializa uma nova colecao.
 		players.clear();
 		// Inicializa as entidades do jogo
 		initEntities();
@@ -115,17 +115,17 @@ public class Jogo extends Canvas implements GameWindowCallback {
 	}
 
 	/**
-	 * Notificação de que o frame será renderizado. Este método é responsável por
-	 * atualizar o frame e a lógica do jogo.
+	 * Notificacao de que o frame sera renderizado. Este metodo e responsavel por
+	 * atualizar o frame e a logica do jogo.
 	 */
 	public void frameRendering() {
 		// Dispara um Sleep no jogo para que a thread possa reagir em
 		// tempo certo aos comandos do jogador.
 		SystemTimer.sleep(lastLoopTime + 10 - SystemTimer.getTime());
 
-		// Calcula quanto tempo se passou desde a última atualização,
-		// este bloco serve para quantizar a movimentação das entidades
-		// na última iteração do loop.
+		// Calcula quanto tempo se passou desde a ultima atualizacao,
+		// este bloco serve para quantificar a movimentacao das entidades
+		// na ultima iteracao do loop.
 		long delta = SystemTimer.getTime() - lastLoopTime;
 		lastLoopTime = SystemTimer.getTime();
 		lastFpsTime += delta;
@@ -142,7 +142,7 @@ public class Jogo extends Canvas implements GameWindowCallback {
 		board.draw();
 		dice.draw();
 		
-		// Passa pela coleção de peças para redesenhá-las.
+		// Passa pela colecao de pecas para redesenha-las.
 		for ( PlayerEntity playerEntity : players ) {
 			playerEntity.draw(coord,playerEntity.getSpace(),playerEntity.getPlayer());
 		}
@@ -152,7 +152,7 @@ public class Jogo extends Canvas implements GameWindowCallback {
 			System.exit(0);
 		}
 		
-		// Se o botão do mouse for clicado, Tratar evento
+		// Se o botao do mouse for clicado, Tratar evento
 		if (window.isMousePressed(MouseEvent.BUTTON1)) {
 			Mouse.setPressed(MouseEvent.BUTTON1, false);
 
@@ -174,7 +174,9 @@ public class Jogo extends Canvas implements GameWindowCallback {
 				while(player.getSpace() < this.lastspace) {
 					player.setSpace(++spaces);
 					if(coord.getType(spaces).equalsIgnoreCase("question")) {
-						this.showQuestion(loader.getQuestion("Conceitos Gerais",loader.getRandomQuestion(loader.getSizeListQuestion("Conceitos Gerais"))),this);
+						this.showQuestion(loader.getQuestion("Conceitos Gerais",
+							loader.getRandomQuestion(loader.getSizeListQuestion("Conceitos Gerais"))), 
+								this);
 					}	
 				}
 				this.turn++;
@@ -187,7 +189,7 @@ public class Jogo extends Canvas implements GameWindowCallback {
 	}
 
 	/**
-	 * Notificação de que o jogo será fechado.
+	 * Notificacao de que o jogo sera fechado.
 	 */
 	public void windowClosed() {
 		System.exit(0);	
@@ -198,10 +200,10 @@ public class Jogo extends Canvas implements GameWindowCallback {
 	}
 
 	/**
-	 * O ponto central do jogo. Este método simplesmente cria uma instância da
-	 * classe na qual irá iniciar a tela e o loop principal do jogo.
+	 * O ponto central do jogo. Este metodo simplesmente cria uma instancia da
+	 * classe na qual ira iniciar a tela e o loop principal do jogo.
 	 * 
-	 * @param args Os argumentos que são passados via CLI. OBS: Isso não é utilizado.
+	 * @param args Os argumentos que sao passados via CLI. OBS: Isso nao e utilizado.
 	 */
 	public static void main(String argv[]) {
 		int result = JOptionPane.showOptionDialog(null,"Java2D ou OpenGL?","Java2D ou OpenGL?",

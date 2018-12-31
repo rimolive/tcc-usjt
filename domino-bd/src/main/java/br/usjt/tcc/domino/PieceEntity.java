@@ -477,4 +477,13 @@ public class PieceEntity extends Entity {
 			}
 		}
 	}
+
+	public void doLogic() {
+		// Do Nothing
+	}
+
+	public void collidedWith(Entity other) {
+		// Do Nothing
+	}
+
 }

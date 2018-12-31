@@ -41,4 +41,12 @@ public class DiceEntity extends Entity implements Runnable {
 			
 		}
 	}
+
+	public void collidedWith(Entity other) {
+		// Do Nothing
+	}
+
+	public void doLogic() {
+		// Do Nothing
+	}
 }

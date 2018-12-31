@@ -3,9 +3,12 @@
   <parent>
     <groupId>br.usjt.tcc</groupId>
     <artifactId>tcc-usjt</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>domino-bd</artifactId>
+  <properties>
+    <class>domino.Domino</class>
+  </properties>
   <dependencies>
   	<dependency>
   		<groupId>br.usjt.tcc</groupId>
@@ -13,4 +16,39 @@
   		<version>${project.version}</version>
   	</dependency>
   </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>  
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>${maven-shade-plugin.version}</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer
+                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>br.usjt.tcc.${class}</mainClass>
+                </transformer>
+              </transformers>
+              <finalName>domino-db</finalName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

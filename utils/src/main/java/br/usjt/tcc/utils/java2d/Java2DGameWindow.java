@@ -16,8 +16,8 @@ import br.usjt.tcc.utils.GameWindow;
 import br.usjt.tcc.utils.GameWindowCallback;
 import br.usjt.tcc.utils.ResourceFactory;
 import br.usjt.tcc.utils.Sprite;
-import br.usjt.tcc.utils.input.Keyboard;
-import br.usjt.tcc.utils.input.Mouse;
+import br.usjt.tcc.utils.java2d.input.Keyboard;
+import br.usjt.tcc.utils.java2d.input.Mouse;
 
 /**
  * Uma implementacao da classe {@code GameWindow}, na qual utiliza a tecnologia

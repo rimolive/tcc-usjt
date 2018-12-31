@@ -3,10 +3,11 @@ package br.usjt.tcc.utils.lwjgl;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 
-import org.lwjgl.LWJGLException;
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.Display;
+import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.*;
+
+// import org.lwjgl.input.Keyboard;
+// import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 import br.usjt.tcc.utils.GameWindow;
@@ -35,7 +36,7 @@ public class LWJGLGameWindow implements GameWindow {
 	 * True se o jogo esta no estado "executando", ou seja, se o loop principal
 	 * foi iniciado
 	 */
-	private boolean gameRunning = true;
+	private boolean gameRunning = false;
 
 	/** A largura da tela */
 	private int width;
@@ -44,7 +45,7 @@ public class LWJGLGameWindow implements GameWindow {
 	private int height;
 
 	/** The loader responsible for converting images into OpenGL textures */
-	private TextureLoader textureLoader;
+	private TextureLoader textureLoader= new TextureLoader();
 
 	/**
 	 * Title of window, we get it before our window is ready, so store it still
@@ -74,11 +75,7 @@ public class LWJGLGameWindow implements GameWindow {
 	 */
 	private String back;
 
-	/**
-	 * Cria uma nova janela de jogo que utilizara OpenGL para renderizar o jogo.
-	 */
-	public LWJGLGameWindow() {
-	}
+	private long window;
 
 	/**
 	 * Retorna o acesso ao texture loader que converte imagens em texturas
@@ -98,9 +95,6 @@ public class LWJGLGameWindow implements GameWindow {
 	 */
 	public void setTitle(String title) {
 		this.title = title;
-		if (Display.isCreated()) {
-			Display.setTitle(title);
-		}
 	}
 
 	/**
@@ -121,32 +115,23 @@ public class LWJGLGameWindow implements GameWindow {
 	 * tela o mais rapido possivel.
 	 */
 	public void startRendering() {
-		try {
-			Display.create();
-			Display.setFullscreen(true);
+		window = glfwCreateWindow(this.width, this.height, this.title, 1, 0);
 
-			// captura o mouse
-			// Mouse.setGrabbed(true);
+		// habilita texturas desde que sejam utilizados pelas sprites
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
 
-			// habilita texturas desde que sejam utilizados pelas sprites
-			GL11.glEnable(GL11.GL_TEXTURE_2D);
+		// desabilita o teste de profundidade do OpenGL
+		GL11.glDisable(GL11.GL_DEPTH_TEST);
 
-			// desabilita o teste de profundidade do OpenGL
-			GL11.glDisable(GL11.GL_DEPTH_TEST);
+		GL11.glMatrixMode(GL11.GL_PROJECTION);
+		GL11.glLoadIdentity();
 
-			GL11.glMatrixMode(GL11.GL_PROJECTION);
-			GL11.glLoadIdentity();
+		GL11.glOrtho(0, this.width, this.height, 0, -1, 1);
 
-			textureLoader = new TextureLoader();
-
-			GL11.glOrtho(0, this.width, this.height, 0, -1, 1);
-
-			if (callback != null) {
-				callback.initialise();
-			}
-		} catch (LWJGLException le) {
-			callback.windowClosed();
+		if (callback != null) {
+			callback.initialise();
 		}
+		glfwShowWindow(window);
 
 		gameLoop();
 	}
@@ -173,19 +158,20 @@ public class LWJGLGameWindow implements GameWindow {
 		// O layout de teclas padrao nao foi utilizado,
 		// portanto, devemos relaciona-las com o padrao
 		// especifico
-		switch (keyCode) {
-		case KeyEvent.VK_SPACE:
-			keyCode = Keyboard.KEY_SPACE;
-			break;
-		case KeyEvent.VK_LEFT:
-			keyCode = Keyboard.KEY_LEFT;
-			break;
-		case KeyEvent.VK_RIGHT:
-			keyCode = Keyboard.KEY_RIGHT;
-			break;
-		}
+		// switch (keyCode) {
+		// case KeyEvent.VK_SPACE:
+		// 	keyCode = Keyboard.KEY_SPACE;
+		// 	break;
+		// case KeyEvent.VK_LEFT:
+		// 	keyCode = Keyboard.KEY_LEFT;
+		// 	break;
+		// case KeyEvent.VK_RIGHT:
+		// 	keyCode = Keyboard.KEY_RIGHT;
+		// 	break;
+		// }
 
-		return Keyboard.isKeyDown(keyCode);
+		// return Keyboard.isKeyDown(keyCode);
+		return false;
 	}
 
 	/**
@@ -194,6 +180,7 @@ public class LWJGLGameWindow implements GameWindow {
 	 */
 	private void gameLoop() {
 		while (gameRunning) {
+			gameRunning = true;
 			// Limpa a tela
 			GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
@@ -212,12 +199,13 @@ public class LWJGLGameWindow implements GameWindow {
 			}
 
 			// Atualiza o conteudo da janela
-			Display.update();
-
-			if (Display.isCloseRequested() || Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
+			glfwPollEvents();
+			glfwSwapBuffers(window);
+			
+			if (glfwWindowShouldClose(window)) {
+			//  || Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
 				gameRunning = false;
-				Display.destroy();
-				callback.windowClosed();
+				glfwDestroyWindow(window);
 			}
 		}
 	}
@@ -248,10 +236,10 @@ public class LWJGLGameWindow implements GameWindow {
 	 * 
 	 */
 	public boolean isMousePressed(int button) {
-		String strButton = "BUTTON" + button;
-		if (button == Mouse.getButtonIndex(strButton)) {
-			return true;
-		}
+		// String strButton = "BUTTON" + button;
+		// if (button == Mouse.getButtonIndex(strButton)) {
+		// 	return true;
+		// }
 		return false;
 	}
 
@@ -270,11 +258,7 @@ public class LWJGLGameWindow implements GameWindow {
 	 *            O caminho da imagem de fundo da janela
 	 */
 	public void setBackgroundImage(String sprite) {
-		if (Display.isCreated()) {
-			this.background = ResourceFactory.get().getSprite(sprite);
-		} else {
-			back = sprite;
-		}
+		this.background = ResourceFactory.get().getSprite(sprite);
 	}
 
 	public void showQuestion(Question question) {

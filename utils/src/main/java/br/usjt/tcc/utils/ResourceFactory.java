@@ -84,14 +84,12 @@ public class ResourceFactory {
 		// Se a janela ainda n�o foi criada, cria uma janela agora
 		if (window == null) {
 			switch (renderingType) {
-			case JAVA2D: {
+			case JAVA2D:
 				window = new Java2DGameWindow();
 				break;
-			}
-			case OPENGL_LWJGL: {
+			case OPENGL_LWJGL:
 				window = new LWJGLGameWindow();
 				break;
-			}
 			}
 		}
 
